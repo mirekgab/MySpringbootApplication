@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pl.mirekgab.MySpringbootApplication;
+package pl.mirekgab.mySpringbootApplication;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MyFirstRestController {
     
     @RequestMapping("/hello")
-    public String start() {
-        return "hello, my first rest controller";
+    public String start(@RequestParam(name="myName", defaultValue = "") String name) {
+        return new String("hello "+name).trim();
     }
 }
