@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class MyFirstRestController {
-    
+        
     @RequestMapping("/hello")
     public String start(@RequestParam(name="myName", defaultValue = "") String name) {
         return new String("hello "+name).trim();
